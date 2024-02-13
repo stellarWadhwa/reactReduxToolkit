@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useSelector,useDispatch } from 'react-redux';
 import './App.css';
+import {soldCar, boughtCar} from "./features/carSlice/carSlice"
 
 function App() {
+  const dispatch = useDispatch();
+  // const count = useSelector((state) => state.car);
+  const count = useSelector(boughtCar);
+  
+console.log(count.payload.car.value)
+function dispatchCar(){
+  dispatch(soldCar())
+}
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<span>useSelec</span>
+<button onClick={dispatchCar}>click</button>
     </div>
   );
 }
